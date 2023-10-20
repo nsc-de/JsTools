@@ -1,6 +1,5 @@
 import SavePromise from "./savepromise";
-const timeout = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+import { timeout } from "timeout-promise-wrapper";
 
 describe("savePromise", () => {
   it("should save once", async () => {
