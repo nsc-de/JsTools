@@ -5,9 +5,7 @@
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
   "license": "BSD-3-Clause",
-  "dependencies": {
-    "debug": "^4.3.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.0",
