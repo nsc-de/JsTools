@@ -1,0 +1,5 @@
+---
+"savepromise": patch
+---
+
+Update dependencies
