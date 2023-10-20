@@ -1,6 +1,6 @@
-import { timeout } from "./prtimeout";
+import { timeout } from "./timeout-promise-wrapper";
 
-describe("prtimeout", () => {
+describe("timeout-promise-wrapper", () => {
   it("should timeout", async () => {
     let called = false;
 

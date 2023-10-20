@@ -1,5 +1,5 @@
 ---
-"prtimeout": patch
+"timeout-promise-wrapper": patch
 "savepromise": patch
 ---
 
