@@ -53,4 +53,17 @@ export default function savePromise(
       do_save();
     }
   }
+
+  return {
+    get saving() {
+      return saving;
+    },
+    get scheduled() {
+      return scheduled;
+    },
+    get promise() {
+      return promise;
+    },
+    save,
+  };
 }
