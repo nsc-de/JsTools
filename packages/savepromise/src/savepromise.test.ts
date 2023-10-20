@@ -48,4 +48,18 @@ describe("savePromise", () => {
     await it.save();
     expect(count).toBe(2);
   });
+
+  it("test reject", async () => {
+    let count = 0;
+    const { save } = SavePromise(async () => {
+      await timeout(100);
+      count++;
+      throw new Error("test");
+    });
+
+    await expect(() => save()).rejects.toThrow("test");
+    await expect(() => save()).rejects.toThrow("test");
+
+    expect(count).toBe(2);
+  });
 });
