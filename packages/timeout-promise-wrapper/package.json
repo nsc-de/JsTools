@@ -1,6 +1,6 @@
 {
   "name": "timeout-promise-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "timeout-promise-wrapper is a promise-based implementation of setTimeout",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
