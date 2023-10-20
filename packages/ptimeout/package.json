@@ -1,6 +1,5 @@
 {
   "name": "ptimeout",
-  "private": true,
   "version": "0.1.0",
   "description": "ptimeout is a promise-based implementation of setTimeout",
   "main": "lib/index.js",
