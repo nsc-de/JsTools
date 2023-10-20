@@ -1,4 +1,4 @@
-export default function savePromise(
+export default function SavePromise(
   fn: () => Promise<unknown | void> | void | unknown
 ) {
   // True if we have a save in progress
@@ -28,7 +28,8 @@ export default function savePromise(
     saving = true;
 
     try {
-      rs?.(await fn());
+      const result = await fn();
+      rs?.(result);
     } catch (e) {
       rj?.(e);
     } finally {
@@ -43,15 +44,19 @@ export default function savePromise(
     }
 
     scheduled = true;
-    promise = new Promise<unknown>((rs, rj) => {
+    const p = (promise = new Promise<unknown>((rs, rj) => {
       promiseResolve = rs;
       promiseReject = rj;
-    });
+    }));
 
     if (!saving) {
       saving = true;
       do_save();
     }
+
+    const result = await p;
+
+    return result;
   }
 
   return {
@@ -67,3 +72,6 @@ export default function savePromise(
     save,
   };
 }
+
+export type SavePromise = ReturnType<typeof SavePromise>;
+export { SavePromise };
