@@ -28,14 +28,24 @@ describe("savePromise", () => {
 
   it("should save twice when called three times", async () => {
     let count = 0;
-    const { save } = SavePromise(async () => {
+    const it = SavePromise(async () => {
       await timeout(100);
       count++;
     });
 
-    save();
-    save();
-    await save();
+    it.save();
+
+    expect(it.promise).not.toBeDefined();
+    expect(it.saving).toBe(true);
+    expect(it.scheduled).toBe(false);
+
+    it.save();
+
+    expect(it.promise).toBeDefined();
+    expect(it.saving).toBe(true);
+    expect(it.scheduled).toBe(true);
+
+    await it.save();
     expect(count).toBe(2);
   });
 });
