@@ -1,3 +1,8 @@
+/**
+ * Create a savepromise instance
+ * @param fn the function to call when saving
+ * @returns a savepromise instance
+ */
 export default function SavePromise(
   fn: () => Promise<unknown | void> | void | unknown
 ) {
@@ -11,20 +16,26 @@ export default function SavePromise(
   // This promise will be resolved when the scheduled save is complete
   let promise: Promise<unknown> | undefined;
 
+  // These will be set when a save is scheduled
   let promiseResolve: ((value?: unknown | void) => void) | undefined,
     promiseReject: ((value?: unknown | void) => void) | undefined;
 
+  // this function does the actual saving
   async function do_save() {
+    // If we're not scheduled, we're done
     if (!scheduled) return;
 
+    // Copy the resolve and reject functions to local variables
     const rs = promiseResolve;
     const rj = promiseReject;
 
+    // Clear the scheduled flag
     promiseResolve = undefined;
     promiseReject = undefined;
     scheduled = false;
     promise = undefined;
 
+    // Set the saving flag
     saving = true;
 
     try {
@@ -38,6 +49,10 @@ export default function SavePromise(
     }
   }
 
+  /**
+   * Save the data
+   * @returns A promise that will be resolved when the save is complete
+   */
   async function save() {
     if (scheduled) {
       return await promise;
