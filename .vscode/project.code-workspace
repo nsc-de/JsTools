@@ -10,25 +10,13 @@
     {
       "name": "packages",
       "path": "../packages"
-    },
-
-    // Docs
-    {
-      "name": "docs",
-      "path": "../docs/"
     }
   ],
   "settings": {
     "files.exclude": {
       "node_modules/": true
     },
-    "jest.disabledWorkspaceFolders": [
-      "packages/core",
-      "packages/addon",
-      "packages/adapter",
-      "packages/worker",
-      "docs"
-    ],
+    "jest.disabledWorkspaceFolders": ["packages"],
     "jest.jestCommandLine": "npx jest --config jest.config.js"
   },
 
