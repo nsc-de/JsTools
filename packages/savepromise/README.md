@@ -12,11 +12,12 @@ npm install savepromise
 ## Usage
 
 ```javascript
-const SavePromise = require('savepromise');
+const SavePromise = require("savepromise");
 
 const savePromise = SavePromise(() => {
   // function that saves your data
 });
 
-save using savePromise.save(data);
+//save using:
+savePromise.save(data);
 ```
