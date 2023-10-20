@@ -1,0 +1,93 @@
+{
+  "folders": [
+    // Root
+    {
+      "name": "jstools",
+      "path": "../"
+    },
+
+    // Packages
+    {
+      "name": "packages",
+      "path": "../packages"
+    },
+
+    // Docs
+    {
+      "name": "docs",
+      "path": "../docs/"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules/": true
+    },
+    "jest.disabledWorkspaceFolders": [
+      "packages/core",
+      "packages/addon",
+      "packages/adapter",
+      "packages/worker",
+      "docs"
+    ],
+    "jest.jestCommandLine": "npx jest --config jest.config.js"
+  },
+
+  "extensions": {
+    "recommendations": ["dbaeumer.vscode-eslint", "orta.vscode-jest"]
+  },
+
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Build",
+        "command": "npm run build"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Test",
+        "command": "npm run test"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Lint",
+        "command": "npm run lint"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Install",
+        "command": "npm install"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "CI",
+        "command": "npm ci"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Changeset",
+        "command": "npx changeset"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Changeset Version",
+        "command": "npx changeset version"
+      },
+      {
+        "request": "launch",
+        "type": "node-terminal",
+        "name": "Publish",
+        "command": "npx changeset publish"
+      }
+    ],
+    "compounds": []
+  }
+}

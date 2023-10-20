@@ -1,0 +1,122 @@
+# Run all the mocha tests on nodejs
+
+name: "Node.js CI 🧪"
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  tests:
+    name: CI Tests for on Node.js ${{ matrix.node-version }} 🧪
+    runs-on: ubuntu-latest
+
+    # # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # env:
+    #   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #   TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    #   TURBO_REMOTE_ONLY: true
+
+    strategy:
+      matrix:
+        node-version: [v16.x, v18.x, v19.x, v20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Cache ♻️
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules 📃
+        continue-on-error: true
+        run: npm list
+
+      - name: Install ⤵️
+        run: |
+          npm ci
+
+      - name: Cache Turbo ♻️
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        with:
+          cache-prefix: turbo-tests-${{ matrix.node-version }}-${{github.ref}}_
+
+      - name: Run tests 🔬
+        run: npm run test
+
+      - name: Upload coverage reports to Codecov ☁️
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    name: Build on Node.js v18.x 🔨
+    runs-on: ubuntu-latest
+
+    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      TURBO_REMOTE_ONLY: true
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js v18.x 📦
+        uses: actions/setup-node@v3
+        with:
+          node-version: v18.x
+          cache: "npm"
+
+      - name: Cache ♻️
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules 📃
+        continue-on-error: true
+        run: npm list
+
+      - name: Install ⤵️
+        run: |
+          npm ci
+
+      - name: Cache Turbo ♻️
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        with:
+          cache-prefix: turbo-build-${{github.ref}}_
+
+      - name: Build 🔧
+        run: npm run build
