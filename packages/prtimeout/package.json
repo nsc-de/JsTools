@@ -1,7 +1,7 @@
 {
-  "name": "ptimeout",
+  "name": "prtimeout",
   "version": "0.1.0",
-  "description": "ptimeout is a promise-based implementation of setTimeout",
+  "description": "prtimeout is a promise-based implementation of setTimeout",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
   "license": "BSD-3-Clause",

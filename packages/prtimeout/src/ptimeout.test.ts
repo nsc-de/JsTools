@@ -1,6 +1,6 @@
-import { timeout } from "./ptimeout";
+import { timeout } from "./prtimeout";
 
-describe("ptimeout", () => {
+describe("prtimeout", () => {
   it("should timeout", async () => {
     let called = false;
 
