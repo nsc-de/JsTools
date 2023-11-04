@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.1.4
+
+### Patch Changes
+
+- 8083dbb: Update tags
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.3
+
+### Patch Changes
+
+- 8083dbb: Update tags
+
 ## 0.1.2
 
 ### Patch Changes
