@@ -41,5 +41,14 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "timeout",
+    "promise",
+    "async",
+    "await",
+    "library",
+    "wrapper",
+    "lightweight"
+  ]
 }
