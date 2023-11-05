@@ -12,7 +12,7 @@ npm install savepromise
 ## Usage
 
 ```javascript
-const SavePromise = require("savepromise");
+import SavePromise from "savepromise";
 
 const savePromise = SavePromise(() => {
   // function that saves your data
@@ -28,7 +28,7 @@ So it will optimize your saving operations.
 So if you have this code:
 
 ```javascript
-const SavePromise = require("savepromise");
+import SavePromise from "savepromise";
 
 const savePromise = SavePromise(() => {
   // function that saves your data
