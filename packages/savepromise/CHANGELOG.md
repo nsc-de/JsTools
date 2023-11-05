@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.0
+
+### Minor Changes
+
+- 6f0549b: Optimize build, make build size much smaller
+
 ## 0.1.4
 
 ### Patch Changes

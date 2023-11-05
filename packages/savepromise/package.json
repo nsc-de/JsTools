@@ -1,6 +1,6 @@
 {
   "name": "savepromise",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Savepromise simplifies saving data in a promise based way.",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
