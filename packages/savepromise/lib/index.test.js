@@ -1,5 +1,5 @@
-import { SavePromise } from "./index";
-import { timeout } from "timeout-promise-wrapper";
+const SavePromise = require("./index");
+const { timeout } = require("timeout-promise-wrapper");
 
 describe("savePromise", () => {
   it("should save once", async () => {
