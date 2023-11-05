@@ -21,3 +21,29 @@ const savePromise = SavePromise(() => {
 //save using:
 savePromise.save(data);
 ```
+
+In the above example, the data is saved only once. If you are saving your data multiple times in a short period of time, the true power of this library comes to light. If you save your data multiple times, it is saved only once. If you save your data again, it is saved again after the first save is finished.
+So it will optimize your saving operations.
+
+So if you have this code:
+
+```javascript
+const SavePromise = require("savepromise");
+
+const savePromise = SavePromise(() => {
+  // function that saves your data
+});
+
+//save using:
+savePromise.save(data);
+// modify data
+savePromise.save(data);
+// modify data
+savePromise.save(data);
+// modify data
+savePromise.save(data);
+// modify data
+savePromise.save(data);
+```
+
+there will only be two save operations.
