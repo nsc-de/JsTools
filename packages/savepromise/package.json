@@ -27,12 +27,12 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build": "npm run build:types && npm run build:js",
+    "build:js": "echo No Build needed for this package",
+    "build:types": "echo No Build needed for this package",
+    "build": "echo No Build needed for this package",
     "test": "jest --config=jest.config.js",
-    "type-check:watch": "npm run type-check --watch",
-    "type-check": "tsc --noEmit",
+    "type-check:watch": "echo No Build needed for this package",
+    "type-check": "echo No Build needed for this package",
     "typedoc": "typedoc"
   },
   "repository": {
