@@ -9,3 +9,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    assignees:
+      - "nsc-de"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "development"
+    assignees:
+      - "nsc-de"
+
