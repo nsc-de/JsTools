@@ -5,7 +5,7 @@
       "cache": true,
       "dependsOn": ["^build"],
       "outputs": ["lib/**"],
-      "inputs": ["src/**/*"]
+      "inputs": ["src/**/*", "lib/**/*"]
     },
     "deploy": {
       "dependsOn": ["build", "test", "lint"]
@@ -13,7 +13,7 @@
     "test": {
       "cache": true,
       "dependsOn": ["build"],
-      "inputs": ["src/**/*"]
+      "inputs": ["src/**/*", "lib/**/*"]
     },
     "lint": {
       "cache": true,
