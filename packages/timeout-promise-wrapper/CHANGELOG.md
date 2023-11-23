@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.4
+
+### Patch Changes
+
+- abe0692: Make build much smaller
+
 ## 0.1.3
 
 ### Patch Changes
