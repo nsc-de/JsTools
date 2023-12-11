@@ -19,6 +19,10 @@ jobs:
       github.event_name == 'pull_request' &&
       github.event.workflow_run.event != 'pull_request'
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: Enable auto-merge for Dependabot PRs
         run: gh pr merge --auto --merge "$PR_URL"
         env:
