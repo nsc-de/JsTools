@@ -1,5 +1,11 @@
 name: Dependabot auto-approve
-on: pull_request_target
+on: 
+  pull_request_target:  
+  workflow_run:
+    workflows: 
+        - Node.js CI 🧪
+    types:
+      - completed
     
 permissions:
   contents: write
