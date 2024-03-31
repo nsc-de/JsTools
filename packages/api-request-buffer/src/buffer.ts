@@ -10,7 +10,6 @@ const log = debug("buffer");
  * @author Nicolas Schmidt
  */
 export interface BufferEntry<I, O> {
-
   /**
    * The input to request
    */
@@ -29,7 +28,7 @@ export interface BufferEntry<I, O> {
 
 /**
  * Buffer for api requests
- * 
+ *
  * @example
  * const buffer = new ApiRequestBuffer(new DataRequestBuffer(
  *   "<name of the buffer>",
@@ -43,14 +42,13 @@ export interface BufferEntry<I, O> {
  * buffer.request("id1");
  * buffer.request("id2");
  * buffer.request("id3");
- * 
+ *
  * // if you want to send the requests immediately
  * buffer.flush();
- * 
+ *
  * @author Nicolas Schmidt
  */
 export class ApiRequestBuffer<I, O> {
-  
   /**
    * The internal buffer
    * @internal
@@ -79,7 +77,6 @@ export class ApiRequestBuffer<I, O> {
    * @param maxBatchWaitTime the maximum time to wait before sending a batch (in milliseconds)
    */
   constructor(
-
     /**
      * The name of the buffer
      */
@@ -89,7 +86,7 @@ export class ApiRequestBuffer<I, O> {
      * The function to request multiple items
      */
     private readonly requestMultiple: (
-      requests: I[]
+      requests: I[],
     ) => Promise<(O | Promise<O>)[]>,
 
     /**
@@ -100,7 +97,7 @@ export class ApiRequestBuffer<I, O> {
     /**
      * The maximum time to wait before sending a batch (in milliseconds)
      */
-    private readonly maxBatchWaitTime: number
+    private readonly maxBatchWaitTime: number,
   ) {}
 
   /**
@@ -108,16 +105,16 @@ export class ApiRequestBuffer<I, O> {
    */
   public async flush() {
     log.extend("flush")(
-      `Flushing buffer for ${this.name} with ${this.buffer.length} entries`
+      `Flushing buffer for ${this.name} with ${this.buffer.length} entries`,
     );
 
     while (this.buffer.length > 0) {
       log.extend("flush")(
-        `Flushing ${this.maxBatchSize} entries from buffer for ${this.name}`
+        `Flushing ${this.maxBatchSize} entries from buffer for ${this.name}`,
       );
       const buffer = this.buffer.splice(
         0,
-        Math.min(this.maxBatchSize, this.buffer.length)
+        Math.min(this.maxBatchSize, this.buffer.length),
       );
       const inputs = buffer.map((entry) => entry.input);
 
@@ -134,10 +131,8 @@ export class ApiRequestBuffer<I, O> {
               input-length: ${inputs.length} 
               max-batch-size: ${this.maxBatchSize}
               inputs: ${inputs}
-              error: ${
-                (error as Error)?.stack ?? error
-              }`,
-            )
+              error: ${(error as Error)?.stack ?? error}`,
+            ),
           );
         });
       }
@@ -154,7 +149,7 @@ export class ApiRequestBuffer<I, O> {
   private async checkBuffer() {
     if (this.buffer.length >= this.maxBatchSize) {
       log.extend("autoflush")(
-        `Buffer for ${this.name} reached maxBatchSize of ${this.maxBatchSize}`
+        `Buffer for ${this.name} reached maxBatchSize of ${this.maxBatchSize}`,
       );
       await this.flush();
     } else {
@@ -168,11 +163,11 @@ export class ApiRequestBuffer<I, O> {
    */
   private scheduleBufferCleaner() {
     log.extend("schedule")(
-      `Scheduling buffer cleaner for ${this.name} in ${this.maxBatchWaitTime}ms`
+      `Scheduling buffer cleaner for ${this.name} in ${this.maxBatchWaitTime}ms`,
     );
     this.bufferCleanerTimeout = setTimeout(
       this.bufferCleanerFunction,
-      this.maxBatchWaitTime
+      this.maxBatchWaitTime,
     );
   }
 

@@ -18,7 +18,7 @@ describe("ApiRequestBuffer", () => {
       "test-buffer",
       mockRequestMultiple,
       maxBatchSize,
-      maxBatchWaitTime
+      maxBatchWaitTime,
     );
   });
 
