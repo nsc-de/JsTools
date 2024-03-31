@@ -4,7 +4,7 @@
  * @returns a savepromise instance
  */
 export default function SavePromise(
-  fn: () => Promise<unknown | void> | void | unknown
+  fn: () => Promise<unknown | void> | void | unknown,
 ): {
   /**
    * True when a save is in progress

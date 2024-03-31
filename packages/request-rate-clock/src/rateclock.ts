@@ -71,7 +71,7 @@ export class EntityRateClock extends RateClock {
 
   public readonly uid = Array.from(
     { length: 16 },
-    () => Math.random().toString(36)[2]
+    () => Math.random().toString(36)[2],
   ).join("");
 
   /**
@@ -89,7 +89,7 @@ export class EntityRateClock extends RateClock {
      * The timeout in milliseconds before one operation slot is free again
      * (for example 1000 for 1 operation per second)
      */
-    readonly timeout: number
+    readonly timeout: number,
   ) {
     super();
     // Create singular clocks
