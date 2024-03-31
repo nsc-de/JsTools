@@ -1,5 +1,13 @@
 # request-rate-clock
 
+## 0.1.3
+
+### Patch Changes
+
+- de6ff1b: Update metadata
+- Updated dependencies [de6ff1b]
+  - timeout-promise-wrapper@0.1.7
+
 ## 0.1.2
 
 ### Patch Changes
