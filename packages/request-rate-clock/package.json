@@ -1,5 +1,5 @@
 {
-  "name": "rateclock",
+  "name": "request-rate-clock",
   "version": "0.1.0",
   "description": "Rateclock provides a clock mechanism to work with api rate limits",
   "main": "lib/index.js",
