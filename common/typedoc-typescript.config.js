@@ -3,7 +3,7 @@ const fs = require("fs");
 
 module.exports = function (p) {
   const packageJson = JSON.parse(
-    fs.readFileSync(path.resolve(p, "./package.json"), "utf8")
+    fs.readFileSync(path.resolve(p, "./package.json"), "utf8"),
   );
 
   const name = packageJson.name;
@@ -14,7 +14,7 @@ module.exports = function (p) {
     out: path.resolve(
       __dirname,
       "../docs/static/docs/api-reference/",
-      `${name}`
+      `${name}`,
     ),
     tsconfig: path.resolve(p, "./tsconfig.json"),
     // includeDeclarations: true,

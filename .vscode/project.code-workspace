@@ -3,25 +3,25 @@
     // Root
     {
       "name": "jstools",
-      "path": "../"
+      "path": "../",
     },
 
     // Packages
     {
       "name": "packages",
-      "path": "../packages"
-    }
+      "path": "../packages",
+    },
   ],
   "settings": {
     "files.exclude": {
-      "node_modules/": true
+      "node_modules/": true,
     },
     "jest.disabledWorkspaceFolders": ["packages"],
-    "jest.jestCommandLine": "npx jest --config jest.config.js"
+    "jest.jestCommandLine": "npx jest --config jest.config.js",
   },
 
   "extensions": {
-    "recommendations": ["dbaeumer.vscode-eslint", "orta.vscode-jest"]
+    "recommendations": ["dbaeumer.vscode-eslint", "orta.vscode-jest"],
   },
 
   "launch": {
@@ -31,51 +31,51 @@
         "request": "launch",
         "type": "node-terminal",
         "name": "Build",
-        "command": "npm run build"
+        "command": "npm run build",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Test",
-        "command": "npm run test"
+        "command": "npm run test",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Lint",
-        "command": "npm run lint"
+        "command": "npm run lint",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Install",
-        "command": "npm install"
+        "command": "npm install",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "CI",
-        "command": "npm ci"
+        "command": "npm ci",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Changeset",
-        "command": "npx changeset"
+        "command": "npx changeset",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Changeset Version",
-        "command": "npx changeset version"
+        "command": "npx changeset version",
       },
       {
         "request": "launch",
         "type": "node-terminal",
         "name": "Publish",
-        "command": "npx changeset publish"
-      }
+        "command": "npx changeset publish",
+      },
     ],
-    "compounds": []
-  }
+    "compounds": [],
+  },
 }
