@@ -80,7 +80,6 @@ jobs:
           body: "actions: release"
           branch: "actions/release"
           delete-branch: true
-          branch-suffix: short-commit-hash
           base: "master"
           labels: "release"
 
@@ -89,3 +88,5 @@ jobs:
         run: |
           echo "Enabling automerge for PR ${{ steps.cpr.outputs.pull-request-number }}"
           gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --auto --squash --delete-branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
