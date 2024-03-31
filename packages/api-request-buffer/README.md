@@ -33,4 +33,3 @@ buffer.flush();
 ## License
 
 This package is licensed under the [BSD-3-Clause License](https://github.com/nsc-de/JsTools/blob/master/LICENSE)
-
