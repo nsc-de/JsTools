@@ -4,6 +4,6 @@
  */
 
 /** @type {import('jest').Config} */
-const config = require("../../common/jest-javascript.config");
+const config = require("../../common/jest-typescript.config");
 
 module.exports = config;
