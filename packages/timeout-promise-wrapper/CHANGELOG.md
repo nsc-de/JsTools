@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.7
+
+### Patch Changes
+
+- de6ff1b: Update metadata
+
 ## 0.1.6
 
 ### Patch Changes

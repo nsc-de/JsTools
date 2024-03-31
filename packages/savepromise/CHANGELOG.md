@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.3
+
+### Patch Changes
+
+- de6ff1b: Update metadata
+
 ## 0.2.2
 
 ### Patch Changes
