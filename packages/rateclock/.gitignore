@@ -13,3 +13,4 @@ yarn-error.log*
 
 # generated documentation / reports
 /coverage
+lib/
