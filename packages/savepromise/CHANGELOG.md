@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.2
+
+### Patch Changes
+
+- Update dependencies
+
 ## 0.2.1
 
 ### Patch Changes
