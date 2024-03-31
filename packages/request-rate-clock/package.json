@@ -35,7 +35,8 @@
     "test": "jest --config=jest.config.js",
     "type-check:watch": "npm run type-check --watch",
     "type-check": "tsc --noEmit",
-    "typedoc": "typedoc"
+    "typedoc": "typedoc",
+    "prepublish": "node ../../common/prepublish-script.mjs"
   },
   "repository": {
     "type": "git",

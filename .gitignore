@@ -88,3 +88,7 @@ typings/
 .dynamodb/
 .turbo
 .DS_Store
+
+# License information
+**/LICENSE
+!/LICENSE
