@@ -1,6 +1,6 @@
 {
   "name": "request-rate-clock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rateclock provides a clock mechanism to work with api rate limits",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
