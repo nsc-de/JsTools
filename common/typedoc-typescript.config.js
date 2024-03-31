@@ -3,7 +3,7 @@ const fs = require("fs");
 
 module.exports = function (p) {
   const packageJson = JSON.parse(
-    fs.readFileSync(path.resolve(p, "./package.json"), "utf8"),
+    fs.readFileSync(path.resolve(p, "./package.json"), "utf8")
   );
 
   const name = packageJson.name;
@@ -11,11 +11,7 @@ module.exports = function (p) {
   /** @type {import('typedoc').TypeDocOptions} */
   const options = {
     entryPoints: [path.resolve(p, "./src/index.ts")],
-    out: path.resolve(
-      __dirname,
-      "../docs/static/docs/api-reference/",
-      `${name}`,
-    ),
+    out: path.resolve(__dirname, "../docs/static/api-reference/", `${name}`),
     tsconfig: path.resolve(p, "./tsconfig.json"),
     // includeDeclarations: true,
     externalPattern: "node_modules/",

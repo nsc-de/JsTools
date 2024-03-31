@@ -20,9 +20,8 @@
       "inputs": ["src/**/*"]
     },
     "typedoc": {
-      "cache": true,
-      "dependsOn": [],
-      "inputs": ["src/**/*", "typedoc.config.js", "README.md"]
+      "cache": false,
+      "inputs": ["src/**/*", "lib/**/*", "typedoc.config.js", "README.md"]
     },
     "dev": {
       "cache": false,
