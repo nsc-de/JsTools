@@ -38,6 +38,7 @@ jobs:
         run: npx prettier . --write
 
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -47,3 +48,12 @@ jobs:
           branch: "format-using-prettier"
           delete-branch: true
           labels: automated, style
+
+      - name: Enable Automerge 🤖
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: |
+          echo "Enabling automerge for PR ${{ steps.cpr.outputs.pull-request-number }}"
+          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --auto --squash --delete-branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
