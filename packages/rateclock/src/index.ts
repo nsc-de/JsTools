@@ -1,4 +1,4 @@
-export * from "./savepromise";
+export * from "./rateclock";
 
-import def from "./savepromise";
+import def from "./rateclock";
 export default def;

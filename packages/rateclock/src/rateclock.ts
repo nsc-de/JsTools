@@ -1,3 +1,5 @@
+import timeout from "timeout-promise-wrapper";
+
 class RateClockEntity {
   private _promise: Promise<RateClockEntity> = Promise.resolve(this);
   constructor(readonly timeout: number) {}
@@ -10,7 +12,7 @@ class RateClockEntity {
 /**
  * Clock making sure we don't get problems with the rate limit
  */
-class RateClock {
+export class RateClock {
   private readonly entities: RateClockEntity[] = [];
   private readonly unused: RateClockEntity[] = [];
   private readonly waiting: (() => void)[] = [];
@@ -35,7 +37,7 @@ class RateClock {
 
   acquire(): Promise<void> {
     if (this.unused.length > 0) {
-      const clock = this.unused.pop()!!;
+      const clock = this.unused.pop()!;
       clock.use().then((e) => this.entityReady(e));
       return Promise.resolve();
     }
@@ -45,3 +47,5 @@ class RateClock {
     });
   }
 }
+
+export default RateClock;
