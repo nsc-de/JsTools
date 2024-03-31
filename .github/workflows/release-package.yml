@@ -69,18 +69,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Commit changes 📝
-        uses: EndBug/add-and-commit@v9
-        if: steps.changesets.outputs.published == 'true'
+      - name: Create pull request📝
+        uses: peter-evans/create-pull-request@v6
         with:
-          add: "*"
-          commit: --signoff
-          default_author: github_actions
-          message: "Release package(s) 🚀"
-          pathspec_error_handling: ignore
-          tag_push: "--force"
-
-      # - name: Send a Slack notification if a publish happens
-      #   if: steps.changesets.outputs.published == 'true'
-      #   # You can do something when a publish happens.
-      #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "actions: release"
+          title: "actions: release"
+          body: "actions: release"
+          branch: "actions/release"
+          base: "master"
+          labels: "release"
