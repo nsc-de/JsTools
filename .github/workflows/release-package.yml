@@ -71,6 +71,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create pull request📝
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -82,3 +83,9 @@ jobs:
           branch-suffix: short-commit-hash
           base: "master"
           labels: "release"
+
+      - name: Enable Automerge 🤖
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: |
+          echo "Enabling automerge for PR ${{ steps.cpr.outputs.pull-request-number }}"
+          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --auto --squash --delete-branch
