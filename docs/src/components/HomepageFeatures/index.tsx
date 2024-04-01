@@ -8,9 +8,11 @@ type FeatureItem = {
   description: JSX.Element;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FeatureList: FeatureItem[] = [
   {
     title: "Easy to Use",
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
@@ -21,6 +23,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Focus on What Matters",
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
@@ -31,6 +34,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Powered by React",
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
@@ -60,7 +64,7 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
+          {[].map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
