@@ -34,7 +34,7 @@
     "type-check:watch": "echo No Build needed for this package",
     "type-check": "echo No Build needed for this package",
     "typedoc": "typedoc",
-    "prepublish": "node ../../common/prepublish-script.mjs"
+    "prepack": "node ../../common/prepublish-script.mjs"
   },
   "repository": {
     "type": "git",
