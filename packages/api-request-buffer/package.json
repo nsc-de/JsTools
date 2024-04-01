@@ -25,7 +25,9 @@
     "typedoc": "^0.25.4",
     "typescript": "^5.3.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
   "scripts": {
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "build:types": "tsc --emitDeclarationOnly",
