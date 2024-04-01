@@ -1,6 +1,6 @@
 {
   "name": "api-request-buffer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A lightweight library to buffer multiple requests to an API and send them in a single request.",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",

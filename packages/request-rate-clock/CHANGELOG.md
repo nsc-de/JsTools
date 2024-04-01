@@ -1,5 +1,13 @@
 # request-rate-clock
 
+## 0.1.4
+
+### Patch Changes
+
+- 76f1348: Include license into build
+- Updated dependencies [76f1348]
+  - timeout-promise-wrapper@0.1.8
+
 ## 0.1.3
 
 ### Patch Changes

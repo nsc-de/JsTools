@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.4
+
+### Patch Changes
+
+- 76f1348: Include license into build
+
 ## 0.2.3
 
 ### Patch Changes
