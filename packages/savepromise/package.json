@@ -24,7 +24,7 @@
     "source-map-support": "^0.5.21",
     "timeout-promise-wrapper": "^0.1.8",
     "typedoc": "^0.25.13",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "build:js": "echo No Build needed for this package",
