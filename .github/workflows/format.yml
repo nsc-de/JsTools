@@ -25,11 +25,11 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           persist-credentials: false
       - name: Checkout code
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: Install Dependencies
         run: npm ci
