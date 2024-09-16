@@ -15,7 +15,7 @@
     "@babel/preset-typescript": "^7.24.7",
     "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.18.0",
     "babel-jest": "^29.7.0",
