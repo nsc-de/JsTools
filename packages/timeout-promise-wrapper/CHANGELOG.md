@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.9
+
+### Patch Changes
+
+- b42ab97: Update dependencies
+
 ## 0.1.8
 
 ### Patch Changes

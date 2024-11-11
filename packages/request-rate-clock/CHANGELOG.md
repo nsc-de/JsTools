@@ -1,5 +1,13 @@
 # request-rate-clock
 
+## 0.1.5
+
+### Patch Changes
+
+- b42ab97: Update dependencies
+- Updated dependencies [b42ab97]
+  - timeout-promise-wrapper@0.1.9
+
 ## 0.1.4
 
 ### Patch Changes

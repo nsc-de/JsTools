@@ -1,5 +1,11 @@
 # api-request-buffer
 
+## 0.1.4
+
+### Patch Changes
+
+- b42ab97: Update dependencies
+
 ## 0.1.3
 
 ### Patch Changes
