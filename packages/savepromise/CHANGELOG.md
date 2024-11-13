@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.5
+
+### Patch Changes
+
+- b42ab97: Update dependencies
+
 ## 0.2.4
 
 ### Patch Changes
