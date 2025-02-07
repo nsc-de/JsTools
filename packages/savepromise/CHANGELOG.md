@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.6
+
+### Patch Changes
+
+- b6b345e: Regular dependency update
+
 ## 0.2.5
 
 ### Patch Changes

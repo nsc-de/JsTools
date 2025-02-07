@@ -1,5 +1,11 @@
 # api-request-buffer
 
+## 0.1.5
+
+### Patch Changes
+
+- b6b345e: Regular dependency update
+
 ## 0.1.4
 
 ### Patch Changes
