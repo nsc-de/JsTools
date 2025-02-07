@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.10
+
+### Patch Changes
+
+- b6b345e: Regular dependency update
+
 ## 0.1.9
 
 ### Patch Changes
