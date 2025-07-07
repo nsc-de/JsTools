@@ -26,7 +26,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "debug": "^4.4.0"
+    "debug": "^4.4.1"
   },
   "scripts": {
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
