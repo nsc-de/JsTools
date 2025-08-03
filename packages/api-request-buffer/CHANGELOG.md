@@ -1,5 +1,11 @@
 # api-request-buffer
 
+## 0.1.6
+
+### Patch Changes
+
+- 9395658: Dependency Updates
+
 ## 0.1.5
 
 ### Patch Changes

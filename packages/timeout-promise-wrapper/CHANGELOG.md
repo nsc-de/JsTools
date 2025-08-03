@@ -1,5 +1,11 @@
 # timeout-promise-wrapper
 
+## 0.1.11
+
+### Patch Changes
+
+- 9395658: Dependency Updates
+
 ## 0.1.10
 
 ### Patch Changes
