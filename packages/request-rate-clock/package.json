@@ -1,6 +1,6 @@
 {
   "name": "request-rate-clock",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Rateclock provides a clock mechanism to work with api rate limits",
   "main": "lib/index.js",
   "author": "Nicolas Schmidt",
@@ -26,7 +26,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "timeout-promise-wrapper": "^0.1.10"
+    "timeout-promise-wrapper": "^0.1.11"
   },
   "scripts": {
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",

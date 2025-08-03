@@ -1,5 +1,11 @@
 # savepromise
 
+## 0.2.7
+
+### Patch Changes
+
+- 9395658: Dependency Updates
+
 ## 0.2.6
 
 ### Patch Changes

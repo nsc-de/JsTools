@@ -1,5 +1,13 @@
 # request-rate-clock
 
+## 0.1.7
+
+### Patch Changes
+
+- 9395658: Dependency Updates
+- Updated dependencies [9395658]
+  - timeout-promise-wrapper@0.1.11
+
 ## 0.1.6
 
 ### Patch Changes
