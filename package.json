@@ -7,7 +7,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@changesets/cli": "^2.28.1",
-    "turbo": "^1.13.3"
+    "turbo": "^2.5.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.0",
@@ -44,5 +44,6 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "packageManager": "npm@10.9.3"
 }
