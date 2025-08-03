@@ -1,4 +1,5 @@
 import timeout from "timeout-promise-wrapper";
+import { randomBytes } from "crypto";
 
 /**
  * A RateClock is a class that allows you to limit the rate of a certain operation.
@@ -69,10 +70,7 @@ export class EntityRateClock extends RateClock {
    */
   private readonly waiting: (() => void)[] = [];
 
-  public readonly uid = Array.from(
-    { length: 16 },
-    () => Math.random().toString(36)[2],
-  ).join("");
+  public readonly uid = randomBytes(16).toString("hex");
 
   /**
    * Constructs a new {@link EntityRateClock} with the given amount of entities and the given timeout.
