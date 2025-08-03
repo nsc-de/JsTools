@@ -3,48 +3,25 @@
   "tasks": {
     "build": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "lib/**"
-      ],
-      "inputs": [
-        "src/**/*",
-        "lib/**/*"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["lib/**"],
+      "inputs": ["src/**/*", "lib/**/*"]
     },
     "deploy": {
-      "dependsOn": [
-        "build",
-        "test",
-        "lint"
-      ]
+      "dependsOn": ["build", "test", "lint"]
     },
     "test": {
       "cache": true,
-      "dependsOn": [
-        "build"
-      ],
-      "inputs": [
-        "src/**/*",
-        "lib/**/*"
-      ]
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*", "lib/**/*"]
     },
     "lint": {
       "cache": true,
-      "inputs": [
-        "src/**/*"
-      ]
+      "inputs": ["src/**/*"]
     },
     "typedoc": {
       "cache": false,
-      "inputs": [
-        "src/**/*",
-        "lib/**/*",
-        "typedoc.config.js",
-        "README.md"
-      ]
+      "inputs": ["src/**/*", "lib/**/*", "typedoc.config.js", "README.md"]
     },
     "dev": {
       "cache": false,
