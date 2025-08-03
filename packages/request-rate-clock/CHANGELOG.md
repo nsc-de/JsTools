@@ -1,5 +1,11 @@
 # request-rate-clock
 
+## 0.1.8
+
+### Patch Changes
+
+- 8e0cf9e: Security Fix: Insecure randomness
+
 ## 0.1.7
 
 ### Patch Changes
