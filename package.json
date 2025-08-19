@@ -6,7 +6,7 @@
   "author": "Nicolas Schmidt",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@changesets/cli": "^2.28.1",
+    "@changesets/cli": "^2.29.6",
     "turbo": "^2.5.5"
   },
   "devDependencies": {
