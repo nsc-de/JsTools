@@ -27,7 +27,7 @@ jobs:
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
@@ -85,7 +85,7 @@ jobs:
           persist-credentials: false
 
       - name: Use Node.js v18.x 📦
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: v18.x
           cache: "npm"
